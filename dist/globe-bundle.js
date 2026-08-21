@@ -25,11 +25,22 @@
     var connections=root.querySelector('[data-globe-connections]');
     var minLogos=root.querySelector('[data-globe-min-logos]');
     var minSales=root.querySelector('[data-globe-min-vendas]');
-    if (!logos || !connections || !minLogos || !minSales) return;
-    logos.id='v2Toggle';
-    connections.id='connToggle';
-    minLogos.id='minLogosInput';
-    minSales.id='minVendasInput';
+    function hiddenControl(control,type,value,checked,id){
+      if(!control){
+        control=document.createElement('input');
+        control.type=type;
+        control.value=value;
+        control.checked=checked;
+        control.style.display='none';
+        root.appendChild(control);
+      }
+      control.id=id;
+      return control;
+    }
+    logos=hiddenControl(logos,'checkbox','',false,'v2Toggle');
+    connections=hiddenControl(connections,'checkbox','',true,'connToggle');
+    minLogos=hiddenControl(minLogos,'number','3',false,'minLogosInput');
+    minSales=hiddenControl(minSales,'number','3',false,'minVendasInput');
     var dark=document.createElement('input');
     dark.id='darkToggle';
     dark.type='checkbox';
