@@ -1,0 +1,12 @@
+{
+  "name": "checkout-globe",
+  "version": "1.0.0",
+  "description": "Static WebGL globe bundle for the Checkout landing",
+  "main": "globe-bundle.js",
+  "files": [
+    "globe-bundle.js"
+  ],
+  "publishConfig": {
+    "access": "public"
+  }
+}
