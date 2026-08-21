@@ -367,9 +367,8 @@ const dotFS=`
           varying float vFresnel;
           void main() {
             if(length(gl_PointCoord-0.5)>0.5) discard;
-            // #43B9E4 no centro, #434CE4 nas bordas (ambos os modos)
-            vec3 cCenter = vec3(0.082, 0.635, 1.000);
-            vec3 cEdge   = vec3(0.263, 0.298, 0.894);
+            vec3 cCenter = vec3(0.263, 0.725, 0.894);
+            vec3 cEdge   = vec3(0.263, 0.725, 0.894);
             vec3 color   = mix(cCenter, cEdge, vFresnel);
             gl_FragColor=vec4(color, pow(1.0-vFresnel,1.6));
           }`;
@@ -621,9 +620,8 @@ const ringIdxCount=ringGeo.indices.length;
     const pos=latLonToVec3(c.lat,c.lon,R);
     const sp=pos.clone().normalize().multiplyScalar(R*1.003);
     const q=new Quat().setFromUnitVectors(new Vec3(0,0,1),pos.clone().normalize());
-    // 0x0052cc=[0,82,204]/255=[0,0.322,0.8]   0x0066ee=[0,102,238]/255=[0,0.4,0.933]
-    const cm={color:[0,0.322,0.8,1],scale:1}; coreMats.push(cm);
-    const rm={color:[0,0.4,0.933,0.5],scale:1}; ringMats.push(rm);
+    const cm={color:[0.267,0.533,1,1],scale:1}; coreMats.push(cm);
+    const rm={color:[0.267,0.533,1,0.5],scale:1}; ringMats.push(rm);
     return{pos:sp,q,core:cm,mat:rm,phase:Math.random()*Math.PI*2};
   });
 
@@ -845,11 +843,9 @@ const ringIdxCount=ringGeo.indices.length;
     const [ar,ag,ab] = dark ? [0.333,0.6,1.0] : [0.133,0.333,0.8];
     const ao = dark ? 0.60 : 0.55;
     arcDrawables.forEach(arc=>{arc.mat.color[0]=ar;arc.mat.color[1]=ag;arc.mat.color[2]=ab;arc.mat.color[3]=ao;});
-    // 0x4488ff=[68,136,255]/255=[0.267,0.533,1.0]  0x0052cc=[0,82,204]/255=[0,0.322,0.8]
-    const [cr,cg,cb] = dark ? [0.267,0.533,1.0] : [0,0.322,0.8];
+    const [cr,cg,cb] = [0.267,0.533,1.0];
     coreMats.forEach(m=>{m.color[0]=cr;m.color[1]=cg;m.color[2]=cb;});
-    // 0x5599ff dark, 0x0066ee=[0,102,238]/255=[0,0.4,0.933] light
-    const [rr,rg,rb] = dark ? [0.333,0.6,1.0] : [0,0.4,0.933];
+    const [rr,rg,rb] = [0.267,0.533,1.0];
     ringMats.forEach(m=>{m.color[0]=rr;m.color[1]=rg;m.color[2]=rb;});
   }
 
