@@ -174,7 +174,7 @@ class Quat {
 
 let W=host.stage.clientWidth, H=host.stage.clientHeight;
 const IS_MOBILE=window.matchMedia('(max-width: 767px)').matches;
-const MOBILE_HORIZONTAL_ONLY=IS_MOBILE&&host.section.getAttribute('data-globe-mobile-horizontal')==='true';
+const MOBILE_HORIZONTAL_ONLY=IS_MOBILE;
 const canvas=document.createElement('canvas');
 canvas.style.cssText='display:block;cursor:grab;';
 canvas.addEventListener('mousedown',()=>canvas.style.cursor='grabbing');
