@@ -172,7 +172,7 @@ class Quat {
 // ══════════════════════════════════════════════════════════════════════════════
 
 let W=host.stage.clientWidth, H=host.stage.clientHeight;
-const IS_MOBILE=window.matchMedia('(max-width: 768px)').matches;
+const IS_MOBILE=window.matchMedia('(max-width: 767px)').matches;
 const MOBILE_HORIZONTAL_ONLY=IS_MOBILE&&host.section.getAttribute('data-globe-mobile-horizontal')==='true';
 const canvas=document.createElement('canvas');
 canvas.style.cssText='display:block;cursor:grab;';
@@ -208,7 +208,7 @@ function resize(){
 
 // ── Root group ────────────────────────────────────────────────────────────────
 const root={
-  rotation:{x:-20*Math.PI/180, y:60*Math.PI/180, z:0},
+  rotation:{x:-14*Math.PI/180, y:55*Math.PI/180, z:0},
   matrixWorld: new Mat4(),
 };
 function updateRoot(){
