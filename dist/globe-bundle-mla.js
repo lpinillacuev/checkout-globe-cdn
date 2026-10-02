@@ -3,9 +3,10 @@
   function mountGlobeBundle() {
     var root=document.querySelector('[data-globe]');
     var stage=root && root.querySelector('.globe-card__stage');
-    if (!root || !stage) {
+    var bounds=stage && stage.getBoundingClientRect();
+    if (!root || !stage || !bounds || bounds.width<1 || bounds.height<1) {
       globeBundleAttempts+=1;
-      if (globeBundleAttempts<30) window.setTimeout(mountGlobeBundle,100);
+      if (globeBundleAttempts<120) window.setTimeout(mountGlobeBundle,250);
       return;
     }
     if (root.getAttribute('data-globe-bundle-ready')==='true') return;
