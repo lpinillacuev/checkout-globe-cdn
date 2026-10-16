@@ -1,11 +1,6 @@
-<svg preserveAspectRatio="none" overflow="visible" style="display: block;" width="250" height="222" viewBox="0 0 250 222" fill="none" xmlns="http://www.w3.org/2000/svg">
-<g id="Assets/Plataformas/Logos" clip-path="url(#clip0_0_36)">
-<rect width="250" height="222" fill="white"/>
-<path id="Vector" d="M125.023 81.6875L183.898 221.578H145.312L127.696 177.028H84.6116L125.023 81.6875ZM250 0V221.55L157.572 0H250ZM92.4652 0L0 221.55V0H92.4652Z" fill="#FA0F00"/>
-</g>
-<defs>
-<clipPath id="clip0_0_36">
-<rect width="250" height="222" fill="white"/>
-</clipPath>
-</defs>
+<svg width="43" height="43" viewBox="0 0 42.961 42.961" fill="none" xmlns="http://www.w3.org/2000/svg">
+<circle cx="21.4805" cy="21.4805" r="21.4805" fill="#FA0F00"/>
+<svg x="9.929" y="9.88" width="22" height="20" viewBox="0 0 250 222">
+<path id="Vector" d="M125.023 81.6875L183.898 221.578H145.312L127.696 177.028H84.6116L125.023 81.6875ZM250 0V221.55L157.572 0H250ZM92.4652 0L0 221.55V0H92.4652Z" fill="white"/>
+</svg>
 </svg>
